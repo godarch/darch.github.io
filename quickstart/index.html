@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.34" />
+    <meta name="generator" content="Hugo 0.36-DEV" />
     <meta name="description" content="">
 
 
@@ -13,17 +13,17 @@
     <title>Quickstart :: Darch</title>
     
     
-    <link href="/css/nucleus.css?1517419267" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1517419267" rel="stylesheet">
-    <link href="/css/hybrid.css?1517419267" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1517419267" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1517419267" rel="stylesheet">
-    <link href="/css/auto-complete.css?1517419267" rel="stylesheet">
-    <link href="/css/theme.css?1517419267" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1517419267" rel="stylesheet">
+    <link href="/css/nucleus.css?1517438881" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1517438881" rel="stylesheet">
+    <link href="/css/hybrid.css?1517438881" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1517438881" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1517438881" rel="stylesheet">
+    <link href="/css/auto-complete.css?1517438881" rel="stylesheet">
+    <link href="/css/theme.css?1517438881" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1517438881" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1517419267"></script>
+    <script src="/js/jquery-2.x.min.js?1517438881"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1517419267"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1517419267"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1517438881"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1517438881"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1517419267"></script>
+<script type="text/javascript" src="/js/search.js?1517438881"></script>
 
     
   </div>
@@ -312,6 +312,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
                   <span class="links">
                     
           
@@ -328,14 +330,35 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#step-1-install-darch">Step 1: Install Darch</a></li>
+<li><a href="#step-2-obtaining-recipes">Step 2: Obtaining recipes</a>
+<ul>
+<li><a href="#option-1-pre-built-images">Option 1: Pre-built images</a></li>
+<li><a href="#option-2-build-your-own">Option 2: Build your own</a></li>
+</ul></li>
+<li><a href="#step-3-reboot">Step 3: Reboot!</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
 
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>Quickstart</h1>
           
 
         
@@ -343,21 +366,72 @@
 
 
 
-<h1 id="quickstart">Quickstart</h1>
+<h2 id="requirements">Requirements</h2>
 
-<div class="notices note" ><p>This section is currently geared to</p>
+<ol>
+<li>Any Linux-based distribution can be used as a host machine.</li>
+<li>You will need a machine that is currently using grub2.</li>
+</ol>
+
+<div class="notices note" ><p>If you want to test Darch quickly, without touching your host machine, setup a virtual machine. If you use Arch, use a variation of <a href="https://github.com/pauldotknopf/darch-recipes/blob/master/machine-bootstrap">this</a> script during the installation processes. This also installs Darch for you. If you go down this route, you can jump to <a href="#step-2-obtaining-recipes">Step 2: Obtaining recipes</a>.</p>
 </div>
 
 
-<p>I will walk you through creating</p>
+<h2 id="step-1-install-darch">Step 1: Install Darch</h2>
+
+<p>If you are on Arch Linux, you can install it from the <a href="https://aur.archlinux.org/packages/darch/">AUR</a>. Otherwise, head over to the <a href="https://github.com/godarch/darch/releases">GitHub Releases</a> and download the Darch binaries. There are two packages you can download.</p>
+
+<ul>
+<li><code>darch-amd64-with-runtime.tar.gz</code> - Contains Darch, but with containerd and runc baked into it.</li>
+<li><code>darch-amd64.tar.gz</code> - Contains just Darch.</li>
+</ul>
+
+<p>If you download Darch without the runtime backed into it, you must manually install a valid version of containerd (&gt;=1.0.1) and runc on your system.</p>
+
+<p>After you extract/install the tarball, ensure that containerd is running (<code>sudo systemctl start containerd</code>).</p>
+
+<p>To verify containerd is running, run <code>sudo ctr version</code>. To verify Darch can connect to it, run <code>sudo darch images list</code>.</p>
+
+<p>To enable Darch boot entries in grub, run <code>sudo grub-mkconfig -p /boot/grub/grub.cfg</code>.</p>
+
+<p>That&rsquo;s it! Darch is installed and running!</p>
+
+<h2 id="step-2-obtaining-recipes">Step 2: Obtaining recipes</h2>
+
+<p>You can get images in 1 of 2 ways.</p>
+
+<h3 id="option-1-pre-built-images">Option 1: Pre-built images</h3>
+
+<p>You may use my prebuilt images to test the waters.</p>
+
+<pre><code>sudo darch images pull docker.io/pauldotknopf/darch-arch-personal-base:latest &amp;&amp; \
+sudo darch stage upload docker.io/pauldotknopf/darch-arch-personal-base:latest
+</code></pre>
+
+<p>Also, you may use <code>docker.io/pauldotknopf/darch-arch-personal-plasma:latest</code> if you wish to boot into a KDE environment.</p>
+
+<h3 id="option-2-build-your-own">Option 2: Build your own</h3>
+
+<p>You can compile the images yourself. Normally, you&rsquo;d want to utilize your own recipes, but you can use mine if you like.</p>
+
+<pre><code class="language-bash">git clone git@github.com:pauldotknopf/darch-recipes.git
+cd darch-recipes
+sudo darch images pull docker.io/pauldotknopf/darch-arch-rootfs-builder:latest
+sudo darch recipes build base
+sudo darch stage upload base
+</code></pre>
+
+<h2 id="step-3-reboot">Step 3: Reboot!</h2>
+
+<p>That&rsquo;s it! Reboot your machine to see the new grub entry!</p>
+
+<p>Next, you may want to dig into hooks to setup persisted mount points (<code>/home</code>, <code>/var/lib/games</code>, etc) and custom <code>/etc/hostname</code> files.</p>
 
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -539,20 +613,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1517419267"></script>
-    <script src="/js/perfect-scrollbar.min.js?1517419267"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1517419267"></script>
-    <script src="/js/jquery.sticky.js?1517419267"></script>
-    <script src="/js/featherlight.min.js?1517419267"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1517419267"></script>
-    <script src="/js/highlight.pack.js?1517419267"></script>
+    <script src="/js/clipboard.min.js?1517438881"></script>
+    <script src="/js/perfect-scrollbar.min.js?1517438881"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1517438881"></script>
+    <script src="/js/jquery.sticky.js?1517438881"></script>
+    <script src="/js/featherlight.min.js?1517438881"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1517438881"></script>
+    <script src="/js/highlight.pack.js?1517438881"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1517419267"></script>
-    <script src="/js/learn.js?1517419267"></script>
-    <script src="/js/hugo-learn.js?1517419267"></script>
+    <script src="/js/modernizr.custom.71422.js?1517438881"></script>
+    <script src="/js/learn.js?1517438881"></script>
+    <script src="/js/hugo-learn.js?1517438881"></script>
 
-    <link href="/mermaid/mermaid.css?1517419267" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1517419267"></script>
+    <link href="/mermaid/mermaid.css?1517438881" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1517438881"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
