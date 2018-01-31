@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title> :: Darch</title>
+    <title>Recipes :: Darch</title>
     
     
     <link href="/css/nucleus.css?1517419267" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/concepts/recipes/">
     <nav id="sidebar" class="">
 
 
@@ -180,7 +180,7 @@
   
     
     <li data-nav-id="/concepts/" title="Concepts" class="dd-item 
-        
+        parent
         
         
         ">
@@ -207,8 +207,8 @@
   
     
     <li data-nav-id="/concepts/recipes/" title="Recipes" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/concepts/recipes/">
@@ -301,48 +301,67 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/concepts/'>Concepts</a> > Recipes
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
 
         
         <div id="body-inner">
           
+            <h1>Recipes</h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
-
- 
 
 
-<h1 id="darch">Darch</h1>
 
-<h2 id="what-is-it">What is it?</h2>
-
-<p>Think Dockerfiles, but for bootable, stateless, graphical (or not) environments for your everyday usage.</p>
-
-<p>After each reboot, all changes made to your operating system are wiped, except where explicitly configured not to (home directory, game data, etc). Easily switch between images with individual grub menu entries.</p>
-
-<p>Your images can be layered/inherited (like Dockerfiles) using recipes. For example:</p>
-
-<ul>
-<li><code>base</code> -  This can be Arch Linux, Debian, Gentoo, etc.
-
-<ul>
-<li><code>common</code> - User setup, common tools.</li>
-<li><code>steam</code> - An image that is tweaked for Stream gaming.</li>
-<li><code>development</code> - Your dev tools (make/gcc/etc).
-
-<ul>
-<li><code>plasma</code> - A KDE desktop environment.</li>
-<li><code>i3</code> - Maybe you want to test your development life in an i3 desktop environment?</li>
-</ul></li>
-</ul></li>
-</ul>
-
-<p>It is up to you how you configure your layers. Or maybe want just one recipe for everyday usage. It is up to you how granular you get.</p>
+<footer class=" footline" >
 	
-  
+</footer>
+
         
         </div> 
         
@@ -443,6 +462,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -458,21 +478,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -490,6 +495,25 @@
             
                 
                     
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -511,8 +535,10 @@
 
 
         
+            <a class="nav nav-prev" href="/concepts/" title="Concepts"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/quickstart/" title="Quickstart" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/concepts/stage/" title="Stage" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -542,4 +568,3 @@
 
   </body>
 </html>
-
