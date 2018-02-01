@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.36-DEV" />
-    <meta name="description" content="">
+    <meta name="description" content="Documentation for Darch">
 
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
@@ -13,17 +13,17 @@
     <title> :: Darch</title>
     
     
-    <link href="/css/nucleus.css?1517438881" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1517438881" rel="stylesheet">
-    <link href="/css/hybrid.css?1517438881" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1517438881" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1517438881" rel="stylesheet">
-    <link href="/css/auto-complete.css?1517438881" rel="stylesheet">
-    <link href="/css/theme.css?1517438881" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1517438881" rel="stylesheet">
+    <link href="/css/nucleus.css?1517444999" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1517444999" rel="stylesheet">
+    <link href="/css/hybrid.css?1517444999" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1517444999" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1517444999" rel="stylesheet">
+    <link href="/css/auto-complete.css?1517444999" rel="stylesheet">
+    <link href="/css/theme.css?1517444999" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1517444999" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1517438881"></script>
+    <script src="/js/jquery-2.x.min.js?1517444999"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -34,7 +34,7 @@
     
   </head>
   <body class="" data-url="/">
-    <nav id="sidebar" class="">
+    <nav id="sidebar" class="showVisitedLinks">
 
 
 
@@ -45,22 +45,6 @@
 </a>
 
     </div>
-    
-        <div class="searchbox">
-    <label for="search-by"><i class="fa fa-search"></i></label>
-    <input data-search-input id="search-by" type="text" placeholder="Search...">
-    <span data-search-clear=""><i class="fa fa-close"></i></span>
-</div>
-
-<script type="text/javascript" src="/js/lunr.min.js?1517438881"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1517438881"></script>
-<script type="text/javascript">
-    
-        var baseurl = '\/';
-    
-</script>
-<script type="text/javascript" src="/js/search.js?1517438881"></script>
-
     
   </div>
 
@@ -83,6 +67,8 @@
       <a href="/quickstart/">
           <b>1. </b>Quickstart
           
+            <i class="fa fa-check read-icon"></i>
+          
       </a>
       
               
@@ -104,6 +90,8 @@
         ">
       <a href="/installation/">
           <b>2. </b>Installation
+          
+            <i class="fa fa-check read-icon"></i>
           
       </a>
       
@@ -132,6 +120,8 @@
       <a href="/installation/machine-preperation/">
           Machine preperation
           
+            <i class="fa fa-check read-icon"></i>
+          
       </a>
       
               
@@ -155,6 +145,8 @@
         ">
       <a href="/installation/installing-darch/">
           Installing Darch
+          
+            <i class="fa fa-check read-icon"></i>
           
       </a>
       
@@ -187,6 +179,8 @@
       <a href="/concepts/">
           <b>3. </b>Concepts
           
+            <i class="fa fa-check read-icon"></i>
+          
       </a>
       
       
@@ -214,6 +208,8 @@
       <a href="/concepts/recipes/">
           Recipes
           
+            <i class="fa fa-check read-icon"></i>
+          
       </a>
       
               
@@ -237,6 +233,8 @@
         ">
       <a href="/concepts/stage/">
           Stage
+          
+            <i class="fa fa-check read-icon"></i>
           
       </a>
       
@@ -262,6 +260,8 @@
       <a href="/concepts/hooks/">
           Hooks
           
+            <i class="fa fa-check read-icon"></i>
+          
       </a>
       
               
@@ -285,6 +285,17 @@
     
     
 
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
     
     <section id="footer">
       
@@ -317,30 +328,78 @@
 
 <h1 id="darch">Darch</h1>
 
+<div style="text-align: center;">
+<a  href="/quickstart/" target="_blank"  class="btn btn-default">
+  
+  
+  
+    
+  <i class="fa fa-arrow-right"></i>
+    
+  
+  Quick start
+  
+</a>
+
+<a  href="/installation/" target="_blank"  class="btn btn-default">
+  
+  
+  
+    
+  <i class="fa fa-book"></i>
+    
+  
+  Documentation
+  
+</a>
+
+<a  href="https://github.com/godarch/darch" target="_blank"  class="btn btn-default">
+  
+  
+  
+    
+  <i class="fa fa-github"></i>
+    
+  
+  GitHub
+  
+</a>
+
+</div>
+
 <h2 id="what-is-it">What is it?</h2>
 
 <p>Think Dockerfiles, but for bootable, stateless, graphical (or not) environments for your everyday usage.</p>
 
-<p>After each reboot, all changes made to your operating system are wiped, except where explicitly configured not to (home directory, game data, etc). Easily switch between images with individual grub menu entries.</p>
-
 <p>Your images can be layered/inherited (like Dockerfiles) using recipes. For example:</p>
 
-<ul>
-<li><code>base</code> -  This can be Arch Linux, Debian, Gentoo, etc.
+<div class="mermaid" align="center">
+graph TB;
+	A[Arch Linux, Gentoo, Debian, etc] --> B
+    B[User setup, common scripts] --> C[Steam gaming]
+    B[User setup, common scripts] --> D[Developer tools, gcc/make/etc]
+      D --> E[Plasma desktop]
+      D --> F[i3 desktop]
+</div>
 
-<ul>
-<li><code>common</code> - User setup, common tools.</li>
-<li><code>steam</code> - An image that is tweaked for Steam gaming.</li>
-<li><code>development</code> - Your dev tools (make/gcc/etc).
 
-<ul>
-<li><code>plasma</code> - A KDE desktop environment.</li>
-<li><code>i3</code> - Maybe you want to test your development life in an i3 desktop environment?</li>
-</ul></li>
-</ul></li>
-</ul>
+<p>Each image here can be booted bare-metal. It is up to you how you configure your layers and how granular you get with it.</p>
 
-<p>It is up to you how you configure your layers. Or maybe want just one recipe for everyday usage. It is up to you how granular you get.</p>
+<p>After each reboot, the image is wiped clean (<code>tmpfs</code> overlay). To make changes to your machine, update your recipes and rebuild. Images are built and managed via a docker-like cli.</p>
+
+<style type="text/css">
+#body {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#sidebar {
+  display: none;
+}
+#sidebar-toggle-span {
+  display: none;
+}
+</style>
 	
   
         
@@ -521,20 +580,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1517438881"></script>
-    <script src="/js/perfect-scrollbar.min.js?1517438881"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1517438881"></script>
-    <script src="/js/jquery.sticky.js?1517438881"></script>
-    <script src="/js/featherlight.min.js?1517438881"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1517438881"></script>
-    <script src="/js/highlight.pack.js?1517438881"></script>
+    <script src="/js/clipboard.min.js?1517444999"></script>
+    <script src="/js/perfect-scrollbar.min.js?1517444999"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1517444999"></script>
+    <script src="/js/jquery.sticky.js?1517444999"></script>
+    <script src="/js/featherlight.min.js?1517444999"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1517444999"></script>
+    <script src="/js/highlight.pack.js?1517444999"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1517438881"></script>
-    <script src="/js/learn.js?1517438881"></script>
-    <script src="/js/hugo-learn.js?1517438881"></script>
+    <script src="/js/modernizr.custom.71422.js?1517444999"></script>
+    <script src="/js/learn.js?1517444999"></script>
+    <script src="/js/hugo-learn.js?1517444999"></script>
 
-    <link href="/mermaid/mermaid.css?1517438881" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1517438881"></script>
+    <link href="/mermaid/mermaid.css?1517444999" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1517444999"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
