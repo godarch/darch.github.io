@@ -3,48 +3,72 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://darch.pknopf.com/installation/machine-preperation/</loc>
+    <loc>https://godarch.com/installation/machine-preperation/</loc>
   </url>
   
   <url>
-    <loc>http://darch.pknopf.com/quickstart/</loc>
+    <loc>https://godarch.com/quickstart/</loc>
   </url>
   
   <url>
-    <loc>http://darch.pknopf.com/concepts/recipes/</loc>
+    <loc>https://godarch.com/concepts/recipes/</loc>
   </url>
   
   <url>
-    <loc>http://darch.pknopf.com/installation/</loc>
+    <loc>https://godarch.com/reference/recipes/</loc>
   </url>
   
   <url>
-    <loc>http://darch.pknopf.com/installation/installing-darch/</loc>
+    <loc>https://godarch.com/concepts/</loc>
   </url>
   
   <url>
-    <loc>http://darch.pknopf.com/concepts/stage/</loc>
+    <loc>https://godarch.com/reference/images/</loc>
   </url>
   
   <url>
-    <loc>http://darch.pknopf.com/concepts/</loc>
+    <loc>https://godarch.com/installation/installing-darch/</loc>
   </url>
   
   <url>
-    <loc>http://darch.pknopf.com/concepts/hooks/</loc>
+    <loc>https://godarch.com/concepts/stage/</loc>
   </url>
   
   <url>
-    <loc>http://darch.pknopf.com/</loc>
+    <loc>https://godarch.com/concepts/hooks/</loc>
   </url>
   
   <url>
-    <loc>http://darch.pknopf.com/categories/</loc>
+    <loc>https://godarch.com/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://godarch.com/reference/stage/</loc>
+  </url>
+  
+  <url>
+    <loc>https://godarch.com/advanced/</loc>
+  </url>
+  
+  <url>
+    <loc>https://godarch.com/reference/hooks/</loc>
+  </url>
+  
+  <url>
+    <loc>https://godarch.com/reference/</loc>
+  </url>
+  
+  <url>
+    <loc>https://godarch.com/</loc>
+  </url>
+  
+  <url>
+    <loc>https://godarch.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://darch.pknopf.com/tags/</loc>
+    <loc>https://godarch.com/tags/</loc>
     <priority>0</priority>
   </url>
   

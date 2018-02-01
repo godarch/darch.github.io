@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>Quickstart :: Darch</title>
+    <title>Stage :: Darch</title>
     
     
     <link href="/css/nucleus.css?1517461184" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/quickstart/">
+  <body class="" data-url="/reference/stage/">
     <nav id="sidebar" class="">
 
 
@@ -60,8 +60,8 @@
   
     
     <li data-nav-id="/quickstart/" title="Quickstart" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/quickstart/">
@@ -292,7 +292,7 @@
   
     
     <li data-nav-id="/reference/" title="Reference" class="dd-item 
-        
+        parent
         
         
         ">
@@ -367,8 +367,8 @@
   
     
     <li data-nav-id="/reference/stage/" title="Stage" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/reference/stage/">
@@ -457,7 +457,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/godarch/godarch.github.io/edit/staging/web/content/quickstart/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/godarch/godarch.github.io/edit/staging/web/content/reference/stage/_index.md" target="blank">
                       <i class="fa fa-code-fork"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -482,7 +482,13 @@
             
           
           
-            <a href='/'></a> > Quickstart
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/reference/'>Reference</a> > Stage
+          
+         
           
          
           
@@ -492,21 +498,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#requirements">Requirements</a></li>
-<li><a href="#step-1-install-darch">Step 1: Install Darch</a></li>
-<li><a href="#step-2-obtaining-recipes">Step 2: Obtaining recipes</a>
-<ul>
-<li><a href="#option-1-pre-built-images">Option 1: Pre-built images</a></li>
-<li><a href="#option-2-build-your-own">Option 2: Build your own</a></li>
-</ul></li>
-<li><a href="#step-3-reboot">Step 3: Reboot!</a></li>
-</ul></li>
-</ul>
-</nav>
+
     </div>
 </div>
 
@@ -518,74 +510,13 @@
         
         <div id="body-inner">
           
-            <h1>Quickstart</h1>
+            <h1>Stage</h1>
           
 
         
 
 
-
-
-<h2 id="requirements">Requirements</h2>
-
-<ol>
-<li>Any Linux-based distribution can be used as a host machine.</li>
-<li>You will need a machine that is currently using grub2.</li>
-</ol>
-
-<div class="notices note" ><p>If you want to test Darch quickly, without touching your host machine, setup a virtual machine. If you use Arch, use a variation of <a href="https://github.com/pauldotknopf/darch-recipes/blob/master/machine-bootstrap">this</a> script during the installation processes. This also installs Darch for you. If you go down this route, you can jump to <a href="#step-2-obtaining-recipes">Step 2: Obtaining recipes</a>.</p>
-</div>
-
-
-<h2 id="step-1-install-darch">Step 1: Install Darch</h2>
-
-<p>If you are on Arch Linux, you can install it from the <a href="https://aur.archlinux.org/packages/darch/">AUR</a>. Otherwise, head over to the <a href="https://github.com/godarch/darch/releases">GitHub Releases</a> and download the Darch binaries. There are two packages you can download.</p>
-
-<ul>
-<li><code>darch-amd64-with-runtime.tar.gz</code> - Contains Darch, but with containerd and runc baked into it.</li>
-<li><code>darch-amd64.tar.gz</code> - Contains just Darch.</li>
-</ul>
-
-<p>If you download Darch without the runtime backed into it, you must manually install a valid version of containerd (&gt;=1.0.1) and runc on your system.</p>
-
-<p>After you extract/install the tarball, ensure that containerd is running (<code>sudo systemctl start containerd</code>).</p>
-
-<p>To verify containerd is running, run <code>sudo ctr version</code>. To verify Darch can connect to it, run <code>sudo darch images list</code>.</p>
-
-<p>To enable Darch boot entries in grub, run <code>sudo grub-mkconfig -p /boot/grub/grub.cfg</code>.</p>
-
-<p>That&rsquo;s it! Darch is installed and running!</p>
-
-<h2 id="step-2-obtaining-recipes">Step 2: Obtaining recipes</h2>
-
-<p>You can get images in 1 of 2 ways.</p>
-
-<h3 id="option-1-pre-built-images">Option 1: Pre-built images</h3>
-
-<p>You may use my prebuilt Arch Linux images to test the waters.</p>
-
-<pre><code>sudo darch images pull docker.io/pauldotknopf/darch-arch-base:latest &amp;&amp; \
-sudo darch stage upload docker.io/pauldotknopf/darch-arch-base:latest
-</code></pre>
-
-<p>Also, you may use <code>docker.io/pauldotknopf/darch-arch-plasma:latest</code> if you wish to boot into a KDE environment.</p>
-
-<h3 id="option-2-build-your-own">Option 2: Build your own</h3>
-
-<p>You can compile the images yourself. Normally, you&rsquo;d want to utilize your own recipes, but you can use mine if you like.</p>
-
-<pre><code class="language-bash">git clone git@github.com:pauldotknopf/darch-recipes.git
-cd darch-recipes
-sudo darch images pull docker.io/godarch/arch:latest
-sudo darch recipes build base
-sudo darch stage upload base
-</code></pre>
-
-<h2 id="step-3-reboot">Step 3: Reboot!</h2>
-
-<p>That&rsquo;s it! Reboot your machine to see the new grub entry!</p>
-
-<p>Next, you may want to dig into hooks to setup persisted mount points (<code>/home</code>, <code>/var/lib/games</code>, etc) and custom <code>/etc/hostname</code> files.</p>
+<p>TODO</p>
 
 
 <footer class=" footline" >
@@ -623,141 +554,8 @@ sudo darch stage upload base
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -833,6 +631,40 @@ sudo darch stage upload base
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -852,6 +684,112 @@ sudo darch stage upload base
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
             
         
         
@@ -859,10 +797,10 @@ sudo darch stage upload base
 
 
         
-            <a class="nav nav-prev" href="/" title=""> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/reference/images/" title="Images"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/concepts/" title="Concepts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/reference/hooks/" title="Hooks" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
