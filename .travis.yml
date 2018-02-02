@@ -1,0 +1,5 @@
+before_install:
+  - openssl aes-256-cbc -K $encrypted_e948f5f25de6_key -iv $encrypted_e948f5f25de6_iv -in deploy_key.enc -out deploy_key -d
+script:
+  - make ci
+  

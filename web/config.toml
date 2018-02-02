@@ -1,0 +1,24 @@
+baseURL = "https://godarch.com/"
+languageCode = "en-us"
+title = "Darch"
+theme = "hugo-theme-learn"
+
+googleAnalytics = "UA-112478642-1"
+
+[params]
+  editURL = "https://github.com/godarch/godarch.github.io/edit/staging/web/content/"
+  description = "Documentation for Darch"
+  showVisitedLinks = false
+  disableSearch = true
+
+[[menu.shortcuts]] 
+name = "<i class='fa fa-github'></i> Github repo"
+identifier = "github"
+url = "https://github.com/godarch/darch"
+weight = 10
+
+[[menu.shortcuts]] 
+name = "<i class='fa fa-mobile-phone'></i> Gitter"
+identifier = "gitter"
+url = "https://gitter.im/godarch/lobby"
+weight = 11
