@@ -39,15 +39,15 @@
   </url>
   
   <url>
-    <loc>https://godarch.com/concepts/stage/</loc>
-  </url>
-  
-  <url>
-    <loc>https://godarch.com/concepts/hooks/</loc>
+    <loc>https://godarch.com/concepts/images/</loc>
   </url>
   
   <url>
     <loc>https://godarch.com/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://godarch.com/concepts/stage/</loc>
   </url>
   
   <url>
@@ -56,6 +56,10 @@
   
   <url>
     <loc>https://godarch.com/advanced/</loc>
+  </url>
+  
+  <url>
+    <loc>https://godarch.com/concepts/hooks/</loc>
   </url>
   
   <url>

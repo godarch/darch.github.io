@@ -13,17 +13,17 @@
     <title>Format :: Darch</title>
     
     
-    <link href="/css/nucleus.css?1517518728" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1517518728" rel="stylesheet">
-    <link href="/css/hybrid.css?1517518728" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1517518728" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1517518728" rel="stylesheet">
-    <link href="/css/auto-complete.css?1517518728" rel="stylesheet">
-    <link href="/css/theme.css?1517518728" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1517518728" rel="stylesheet">
+    <link href="/css/nucleus.css?1517557588" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1517557588" rel="stylesheet">
+    <link href="/css/hybrid.css?1517557588" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1517557588" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1517557588" rel="stylesheet">
+    <link href="/css/auto-complete.css?1517557588" rel="stylesheet">
+    <link href="/css/theme.css?1517557588" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1517557588" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1517518728"></script>
+    <script src="/js/jquery-2.x.min.js?1517557588"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -178,6 +178,30 @@
           
         
         </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/concepts/images/" title="Images" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/concepts/images/">
+          Images
+          
+      </a>
+      
               
     </li>
   
@@ -620,9 +644,20 @@ pacman -S stream --noconfirm
 sudo darch recipes build gaming
 </code></pre>
 
-<div class="notices note" ><p>Any inherited images must be built (or listed in <code>sudo darch images list</code>) beforehand. You can build every parent, including your desired recipe, using `<code>sudo darch recipes build $(sudo darch recipes build-dep gaming)</code>.</p>
+<div class="notices note" ><p>Any inherited images must be built (or listed in <code>sudo darch images list</code>) beforehand. You can build every parent, including your desired recipe, using <code>sudo darch recipes build $(sudo darch recipes build-dep gaming)</code>.</p>
 </div>
 
+
+<p>The root of every set of recipes must depend on an external image. The external image can be pulled (<code>sudo darch images pull</code>) or built previously.</p>
+
+<p>To mark a recipe as dependending an external Arch Linux image, preappend <code>external:</code> to your image name.</p>
+
+<pre><code class="language-json">{
+    &quot;inherits&quot;: &quot;external:docker.io/godarch/arch:latest&quot;
+}
+</code></pre>
+
+<p>If no tag is specified for the inherited image, it will default to the first tag that is being used to build (<code>--tags</code>).</p>
 
 
 <footer class=" footline" >
@@ -741,6 +776,22 @@ sudo darch recipes build gaming
                     
             
         
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
             
         
@@ -947,20 +998,20 @@ sudo darch recipes build gaming
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1517518728"></script>
-    <script src="/js/perfect-scrollbar.min.js?1517518728"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1517518728"></script>
-    <script src="/js/jquery.sticky.js?1517518728"></script>
-    <script src="/js/featherlight.min.js?1517518728"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1517518728"></script>
-    <script src="/js/highlight.pack.js?1517518728"></script>
+    <script src="/js/clipboard.min.js?1517557588"></script>
+    <script src="/js/perfect-scrollbar.min.js?1517557588"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1517557588"></script>
+    <script src="/js/jquery.sticky.js?1517557588"></script>
+    <script src="/js/featherlight.min.js?1517557588"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1517557588"></script>
+    <script src="/js/highlight.pack.js?1517557588"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1517518728"></script>
-    <script src="/js/learn.js?1517518728"></script>
-    <script src="/js/hugo-learn.js?1517518728"></script>
+    <script src="/js/modernizr.custom.71422.js?1517557588"></script>
+    <script src="/js/learn.js?1517557588"></script>
+    <script src="/js/hugo-learn.js?1517557588"></script>
 
-    <link href="/mermaid/mermaid.css?1517518728" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1517518728"></script>
+    <link href="/mermaid/mermaid.css?1517557588" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1517557588"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
