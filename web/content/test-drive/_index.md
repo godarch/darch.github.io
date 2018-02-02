@@ -61,6 +61,6 @@ sudo darch stage upload base
 
 ## Step 3: Reboot!
 
-That's it! Reboot your machine to see the new grub entry!
+That's it! Reboot your VM to see the new grub entry!
 
 Next, you may want to dig into hooks to setup persisted mount points (```/home```, ```/var/lib/games```, etc) and custom ```/etc/hostname``` files.
