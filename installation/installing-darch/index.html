@@ -13,17 +13,17 @@
     <title>Installing Darch :: Darch</title>
     
     
-    <link href="/css/nucleus.css?1517562128" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1517562128" rel="stylesheet">
-    <link href="/css/hybrid.css?1517562128" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1517562128" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1517562128" rel="stylesheet">
-    <link href="/css/auto-complete.css?1517562128" rel="stylesheet">
-    <link href="/css/theme.css?1517562128" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1517562128" rel="stylesheet">
+    <link href="/css/nucleus.css?1517565684" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1517565684" rel="stylesheet">
+    <link href="/css/hybrid.css?1517565684" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1517565684" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1517565684" rel="stylesheet">
+    <link href="/css/auto-complete.css?1517565684" rel="stylesheet">
+    <link href="/css/theme.css?1517565684" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1517565684" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1517562128"></script>
+    <script src="/js/jquery-2.x.min.js?1517565684"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -596,6 +596,10 @@
                   <a class="padding" href="https://github.com/godarch/darch"><i class='fa fa-github'></i> Github repo</a>
               </li>
           
+              <li> 
+                  <a class="padding" href="https://gitter.im/godarch/lobby"><i class='fa fa-mobile-phone'></i> Gitter</a>
+              </li>
+          
         </ul>
       </section>
     
@@ -684,7 +688,29 @@
         
 
 
-<p>TODO</p>
+<p>After you have your machine prepared and configured, you should install Darch.</p>
+
+<p>If you are on Arch Linux, you can install it from the <a href="https://aur.archlinux.org/packages/darch/">AUR</a>. Otherwise, head over to the <a href="https://github.com/godarch/darch/releases">GitHub Releases</a> and download the Darch binaries. There are two packages you can download.</p>
+
+<ul>
+<li><code>darch-amd64-with-runtime.tar.gz</code> - Contains Darch, but with containerd and runc baked into it.</li>
+<li><code>darch-amd64.tar.gz</code> - Contains just Darch.</li>
+</ul>
+
+<p>If you download Darch without the runtime backed into it, you must manually install a valid version of containerd (&gt;=1.0.1) and runc on your system. I recommend using the download with the runtime bundled since the availability of containerd/runc in distributions are limited ATM.</p>
+
+<p>By default, containerd will want to store it&rsquo;s images/data in <code>/var/lib/containerd</code>. I recommend changing this to <code>/var/lib/darch/containerd</code> so that your images can exist on a single partition.</p>
+
+<p><strong>/etc/containerd/config.toml</strong></p>
+
+<pre><code class="language-toml">root = &quot;/var/lib/darch/containerd&quot;
+</code></pre>
+
+<p>Make sure your containerd service is running (<code>sudo systemctl enable containerd &amp;&amp; sudo systemctl start containerd</code>).</p>
+
+<p>After everything is up an running, you should be able to run <code>sudo darch images list</code> without issue.</p>
+
+<p>Now you can start <a href="/concepts/recipes/">building recipes</a> and <a href="/concepts/stage/">staging images</a>!</p>
 
 
 <footer class=" footline" >
@@ -1077,20 +1103,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1517562128"></script>
-    <script src="/js/perfect-scrollbar.min.js?1517562128"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1517562128"></script>
-    <script src="/js/jquery.sticky.js?1517562128"></script>
-    <script src="/js/featherlight.min.js?1517562128"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1517562128"></script>
-    <script src="/js/highlight.pack.js?1517562128"></script>
+    <script src="/js/clipboard.min.js?1517565684"></script>
+    <script src="/js/perfect-scrollbar.min.js?1517565684"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1517565684"></script>
+    <script src="/js/jquery.sticky.js?1517565684"></script>
+    <script src="/js/featherlight.min.js?1517565684"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1517565684"></script>
+    <script src="/js/highlight.pack.js?1517565684"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1517562128"></script>
-    <script src="/js/learn.js?1517562128"></script>
-    <script src="/js/hugo-learn.js?1517562128"></script>
+    <script src="/js/modernizr.custom.71422.js?1517565684"></script>
+    <script src="/js/learn.js?1517565684"></script>
+    <script src="/js/hugo-learn.js?1517565684"></script>
 
-    <link href="/mermaid/mermaid.css?1517562128" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1517562128"></script>
+    <link href="/mermaid/mermaid.css?1517565684" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1517565684"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
