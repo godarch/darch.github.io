@@ -23,4 +23,10 @@ Make sure your containerd service is running (```sudo systemctl enable container
 
 After everything is up an running, you should be able to run ```sudo darch images list``` without issue.
 
+Next, you need to upgrade your ```grub.cfg``` file so that it will source Darch's ```/etc/darch/grub.cfg``` file.
+
+```bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 Now you can start [building recipes]({{< ref "concepts/recipes/_index.md" >}}) and [staging images]({{< ref "concepts/stage/_index.md">}})!
