@@ -13,17 +13,17 @@
     <title>Hooks :: Darch</title>
     
     
-    <link href="/css/nucleus.css?1517557588" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1517557588" rel="stylesheet">
-    <link href="/css/hybrid.css?1517557588" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1517557588" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1517557588" rel="stylesheet">
-    <link href="/css/auto-complete.css?1517557588" rel="stylesheet">
-    <link href="/css/theme.css?1517557588" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1517557588" rel="stylesheet">
+    <link href="/css/nucleus.css?1517560152" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1517560152" rel="stylesheet">
+    <link href="/css/hybrid.css?1517560152" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1517560152" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1517560152" rel="stylesheet">
+    <link href="/css/auto-complete.css?1517560152" rel="stylesheet">
+    <link href="/css/theme.css?1517560152" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1517560152" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1517557588"></script>
+    <script src="/js/jquery-2.x.min.js?1517560152"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -250,6 +250,90 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/concepts/hooks/fstab/" title="fstab" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/concepts/hooks/fstab/">
+          fstab
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/concepts/hooks/hostname/" title="hostname" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/concepts/hooks/hostname/">
+          hostname
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/concepts/hooks/ssh/" title="ssh" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/concepts/hooks/ssh/">
+          ssh
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -600,7 +684,136 @@
         
 
 
-<p>TODO</p>
+<p>Hooks are vital to make your bootable images viable for normal usage.</p>
+
+<p>Hooks are special scripts that are run during the boot of your image (in initramfs). They will run before the kernel does a <code>chroot</code> into your root-filesystems&rsquo;s init system.</p>
+
+<p>To view the hooks currently available:</p>
+
+<pre><code class="language-bash">darch hooks list
+</code></pre>
+
+<p>Darch comes with some hooks out-of-the-box for some common requirements.</p>
+
+
+
+
+
+
+
+
+<ul class="children children-li">
+	
+    
+	    
+    
+    
+
+	
+		
+	
+		
+  
+
+
+<li>
+<a href="/concepts/hooks/fstab/" >fstab</a>
+</li>
+
+
+
+
+
+
+			
+		
+
+		
+			
+
+		
+	
+		
+  
+
+
+<li>
+<a href="/concepts/hooks/hostname/" >hostname</a>
+</li>
+
+
+
+
+
+
+			
+		
+
+		
+			
+
+		
+	
+		
+  
+
+
+<li>
+<a href="/concepts/hooks/ssh/" >ssh</a>
+</li>
+
+
+
+
+
+
+			
+		
+
+		
+			
+
+		
+	
+
+	
+</ul>
+
+<p>When images uploaded/tagged in the stage, all the hooks are ran for that image.</p>
+
+<p>After you change a hook&rsquo;s configuration, you may re-run all hooks for your staged images using:</p>
+
+<pre><code class="language-bash">sudo darch stage run-hooks
+</code></pre>
+
+<p>Aside from the configuration options available for each hook, hooks can be globally configured to enabled/disabled for certain images. For example, maybe you want all images tagged as :testing to not use a fstab, and persist no changes?</p>
+
+<p>To configure hooks globally, create a <code>/etc/darch/hooks/hooks-config.json</code> file.</p>
+
+<pre><code class="language-json">{
+    &quot;fstab&quot;: {
+        &quot;execution-order&quot;: 0,
+        &quot;include-images&quot;: [&quot;*&quot;],
+        &quot;exclude-images&quot;: [&quot;*:testing&quot;]
+    }
+}
+</code></pre>
+
+<p>You don&rsquo;t have to list every hook, only hooks that you wish to change the default behavior. The default behavior is defined as:</p>
+
+<pre><code>{
+    &quot;_default&quot;: {
+        &quot;execution-order&quot;: 0,
+        &quot;include-images&quot;: [&quot;*&quot;],
+        &quot;exclude-images&quot;: []
+    }   
+}
+</code></pre>
+
+<p>The <code>_default</code> entry can be manually specified. If left blank (or no <code>/etc/darch/hooks/hooks-config.json</code> file exists), then the default entry above is assumed.</p>
+
+
+
 
 
 <footer class=" footline" >
@@ -764,8 +977,61 @@
 
                     
                     
+                        
+                    
                     
 
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -777,9 +1043,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -934,7 +1197,7 @@
             <a class="nav nav-prev" href="/concepts/stage/" title="Stage"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/installation/" title="Installation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/concepts/hooks/fstab/" title="fstab" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -943,20 +1206,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1517557588"></script>
-    <script src="/js/perfect-scrollbar.min.js?1517557588"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1517557588"></script>
-    <script src="/js/jquery.sticky.js?1517557588"></script>
-    <script src="/js/featherlight.min.js?1517557588"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1517557588"></script>
-    <script src="/js/highlight.pack.js?1517557588"></script>
+    <script src="/js/clipboard.min.js?1517560152"></script>
+    <script src="/js/perfect-scrollbar.min.js?1517560152"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1517560152"></script>
+    <script src="/js/jquery.sticky.js?1517560152"></script>
+    <script src="/js/featherlight.min.js?1517560152"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1517560152"></script>
+    <script src="/js/highlight.pack.js?1517560152"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1517557588"></script>
-    <script src="/js/learn.js?1517557588"></script>
-    <script src="/js/hugo-learn.js?1517557588"></script>
+    <script src="/js/modernizr.custom.71422.js?1517560152"></script>
+    <script src="/js/learn.js?1517560152"></script>
+    <script src="/js/hugo-learn.js?1517560152"></script>
 
-    <link href="/mermaid/mermaid.css?1517557588" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1517557588"></script>
+    <link href="/mermaid/mermaid.css?1517560152" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1517560152"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

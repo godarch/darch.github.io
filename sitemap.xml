@@ -23,11 +23,19 @@
   </url>
   
   <url>
+    <loc>https://godarch.com/concepts/hooks/fstab/</loc>
+  </url>
+  
+  <url>
     <loc>https://godarch.com/concepts/</loc>
   </url>
   
   <url>
     <loc>https://godarch.com/concepts/recipes/distributions/</loc>
+  </url>
+  
+  <url>
+    <loc>https://godarch.com/concepts/images/</loc>
   </url>
   
   <url>
@@ -39,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://godarch.com/concepts/images/</loc>
+    <loc>https://godarch.com/concepts/hooks/hostname/</loc>
   </url>
   
   <url>
@@ -52,6 +60,10 @@
   
   <url>
     <loc>https://godarch.com/reference/stage/</loc>
+  </url>
+  
+  <url>
+    <loc>https://godarch.com/concepts/hooks/ssh/</loc>
   </url>
   
   <url>

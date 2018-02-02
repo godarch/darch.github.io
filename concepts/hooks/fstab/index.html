@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>Tags :: Darch</title>
+    <title>fstab :: Darch</title>
     
     
     <link href="/css/nucleus.css?1517560152" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/concepts/hooks/fstab/">
     <nav id="sidebar" class="">
 
 
@@ -82,7 +82,7 @@
   
     
     <li data-nav-id="/concepts/" title="Concepts" class="dd-item 
-        
+        parent
         
         
         ">
@@ -241,7 +241,7 @@
   
     
     <li data-nav-id="/concepts/hooks/" title="Hooks" class="dd-item 
-        
+        parent
         
         
         ">
@@ -268,8 +268,8 @@
   
     
     <li data-nav-id="/concepts/hooks/fstab/" title="fstab" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/concepts/hooks/fstab/">
@@ -621,6 +621,17 @@
               <div>
                 <div id="top-bar">
                 
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/godarch/godarch.github.io/edit/staging/web/content/concepts/hooks/fstab/_index.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
                 
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
                     <span id="sidebar-toggle-span">
@@ -635,7 +646,25 @@
                     
           
           
-            Tags
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/concepts/'>Concepts</a> > <a href='/concepts/hooks/'>Hooks</a> > fstab
+          
+         
+          
+         
+          
+         
           
            
                   </span>
@@ -655,11 +684,29 @@
         
         <div id="body-inner">
           
-            <h1>Tags</h1>
+            <h1>fstab</h1>
           
 
         
 
+
+<p>When booting your images, you will most likely want to mount some partitions to persist your data. For example, a common one would be:</p>
+
+<pre><code>/dev/sda2               /home               ext4            defaults        0 0
+</code></pre>
+
+<p>This would mean your entire operating system will be cleaned after every reboot, except everything under <code>/home</code>.</p>
+
+<p>To configure an <code>/etc/fstab</code> to be used during boot, create a <code>/etc/darch/hooks/fstab.confg</code> file.</p>
+
+<pre><code>image:name=this_fstab_file
+*:that_fstab_file
+</code></pre>
+
+<p>Then place your fstab in <code>/etc/darch/hooks</code>.</p>
+
+<div class="notices note" ><p>Be sure to run <code>sudo darch stage run-hooks</code> after you make your changes.</p>
+</div>
 
 
 
@@ -717,20 +764,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -747,141 +780,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -954,6 +854,162 @@
 
                     
                     
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                         
                     
                     
@@ -1033,8 +1089,10 @@
 
 
         
+            <a class="nav nav-prev" href="/concepts/hooks/" title="Hooks"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/quickstart/" title="Quickstart" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/concepts/hooks/hostname/" title="hostname" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
