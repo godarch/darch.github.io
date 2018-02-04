@@ -4,7 +4,7 @@ weight = 1
 pre = "<b>1. </b>"
 +++
 
-Want to try Darch quickly without committing to much effort? Try it out in a VM!
+Want to try Darch quickly without committing too much effort? Try it out in a VM!
 
 ## Requirements
 
