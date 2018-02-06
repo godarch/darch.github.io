@@ -33,7 +33,7 @@ Each recipe must define contain to files.
 ```bash
 #!/usr/bin/env bash
 
-pacman -S stream --noconfirm
+pacman -S steam --noconfirm
 ```
 
 To build this recipe:
