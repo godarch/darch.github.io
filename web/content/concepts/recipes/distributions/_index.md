@@ -10,7 +10,7 @@ You can't just reference the Ubuntu/Fedora/etc images already available in Docke
 **Arch Linux**
 
 ```bash
-sudo darch images pull docker.io/godarch/darc
+sudo darch images pull docker.io/godarch/arch
 ```
 
 {{% notice note %}}

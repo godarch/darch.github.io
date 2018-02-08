@@ -18,9 +18,9 @@ Your related recipes will live in a single folder, with multiple sub-folders.
         └── script
 ```
 
-Each sub-folder represents a recipe name. In the example above, ```common```, ```gaming``` and ```development``` is defined.
+Each sub-folder represents a recipe name. In the example above, ```common```, ```gaming``` and ```development``` are defined.
 
-Each recipe must define contain to files.
+Each recipe must contain two files.
 
 **```recipes/gaming/config.json```** -  Meta data about the recipe, including it's parent.
 ```json
