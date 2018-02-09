@@ -28,7 +28,7 @@ After you extract/install the tarball, ensure that containerd is running (```sud
 
 To verify containerd is running, run ```sudo ctr version```. To verify Darch can connect to it, run ```sudo darch images list```.
 
-To enable Darch boot entries in grub, run ```sudo grub-mkconfig -p /boot/grub/grub.cfg```.
+To enable Darch boot entries in grub, run ```sudo grub-mkconfig -o /boot/grub/grub.cfg```.
 
 That's it! Darch is installed and running!
 
