@@ -10,7 +10,7 @@ You can't just reference the Ubuntu/Fedora/etc images already available in Docke
 **Arch Linux**
 
 ```bash
-sudo darch images pull docker.io/godarch/arch
+sudo darch images pull godarch/arch
 ```
 
 {{% notice note %}}
@@ -21,9 +21,9 @@ The base Arch image doesn't include the kernel or initramfs. You must manually i
 
 ```
 # For glib-based image:
-sudo darch images pull docker.io/godarch/void
+sudo darch images pull godarch/void
 # For musl-based image:
-sudo darch images pull docker.io/godarch/void-musl
+sudo darch images pull godarch/void-musl
 ```
 
 ## Planned

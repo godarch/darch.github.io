@@ -53,7 +53,7 @@ To mark a recipe as dependending an external Arch Linux image, preappend ```exte
 
 ```json
 {
-    "inherits": "external:docker.io/godarch/arch:latest"
+    "inherits": "external:godarch/arch:latest"
 }
 ```
 

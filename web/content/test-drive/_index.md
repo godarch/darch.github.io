@@ -41,11 +41,11 @@ You can get images in 1 of 2 ways.
 You may use my prebuilt Arch Linux images to test the waters.
 
 ```
-sudo darch images pull docker.io/pauldotknopf/darch-arch-base:latest && \
-sudo darch stage upload docker.io/pauldotknopf/darch-arch-base:latest
+sudo darch images pull pauldotknopf/darch-arch-base:latest && \
+sudo darch stage upload pauldotknopf/darch-arch-base:latest
 ```
 
-Also, you may use ```docker.io/pauldotknopf/darch-arch-plasma:latest``` if you wish to boot into a KDE environment.
+Also, you may use ```pauldotknopf/darch-arch-plasma:latest``` if you wish to boot into a KDE environment.
 
 ### Option 2: Build your own
 
@@ -54,7 +54,7 @@ You can compile the images yourself. Normally, you'd want to utilize your own re
 ```bash
 git clone git@github.com:pauldotknopf/darch-recipes.git
 cd darch-recipes
-sudo darch images pull docker.io/godarch/arch:latest
+sudo darch images pull godarch/arch:latest
 sudo darch recipes build base
 sudo darch stage upload base
 ```
