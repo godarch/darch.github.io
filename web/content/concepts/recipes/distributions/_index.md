@@ -26,12 +26,19 @@ sudo darch images pull godarch/void
 sudo darch images pull godarch/void-musl
 ```
 
+**Debian**
+
+```bash
+# For the debian testing distro:
+sudo darch images pull godarch/debian:testing
+# For hte debian stable distro:
+sudo darch images pull godarch/debian:stretch
+```
+
 ## Planned
 
 If you would like to help out, refer to [godarch/distributions](https://github.com/godarch/distributions) to make a new base image.
 
 **Gentoo**
-
-**Debian stable/testing**
 
 **Ubuntu**
