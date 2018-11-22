@@ -6,6 +6,11 @@ pre = "<b>1. </b>"
 
 Want to try Darch quickly without committing too much effort? Try it out in a VM!
 
+{{% notice note %}}
+**BEFORE PROCEEDING**: Although this page is still valid, there is a much easier way to try out Darch, using pre-built VM images (vhd, vmdk, etc).
+Read [this](https://pknopf.com/post/2018-11-09-give-ubuntu-darch-a-quick-ride-in-a-virtual-machine/) for more info.
+{{% /notice %}}
+
 ## Requirements
 
 1. Any Linux-based distribution can be used as a guest operating system.
