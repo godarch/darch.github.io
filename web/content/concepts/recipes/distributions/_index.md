@@ -7,6 +7,12 @@ You can't just reference the Ubuntu/Fedora/etc images already available in Docke
 
 ## Available
 
+**Ubuntu**
+
+```bash
+sudo darch images pull godarch/ubuntu:cosmic
+```
+
 **Arch Linux**
 
 ```bash
@@ -40,5 +46,3 @@ sudo darch images pull godarch/debian:stretch
 If you would like to help out, refer to [godarch/distributions](https://github.com/godarch/distributions) to make a new base image.
 
 **Gentoo**
-
-**Ubuntu**
