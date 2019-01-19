@@ -11,7 +11,7 @@ When booting your images, you will most likely want to mount some partitions to 
 
 This would mean your entire operating system will be cleaned after every reboot, except everything under ```/home```.
 
-To configure an ```/etc/fstab``` to be used during boot, create a ```/etc/darch/hooks/fstab.confg``` file.
+To configure an ```/etc/fstab``` to be used during boot, create a ```/etc/darch/hooks/fstab.config``` file.
 
 ```
 image:name=this_fstab_file
