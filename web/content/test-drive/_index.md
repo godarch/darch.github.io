@@ -60,6 +60,7 @@ You can compile the images yourself. Normally, you'd want to utilize your own re
 git clone git@github.com:pauldotknopf/darch-recipes.git
 cd darch-recipes
 sudo darch images pull godarch/arch:latest
+cd recipes
 sudo darch recipes build base
 sudo darch stage upload base
 ```
